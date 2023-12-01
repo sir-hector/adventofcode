@@ -1,0 +1,118 @@
+ROLE_BAZAK_LIMITED_USER: #podstawowa rola pozwalająca na dostęp do nowego bazaka
+            - IS_AUTHENTICATED_REMEMBERED
+            - ROLE_BAZAK_OLD_PAPERS
+ROLE_BAZAK_SERVICE_LIMITED_VIEW: [] #podgląd usług innych użytkowników, bez ceny i rabatu
+ROLE_BAZAK_SERVICE_VIEW: #podgląd usług innych użytkowników
+            - ROLE_BAZAK_SERVICE_LIMITED_VIEW
+ROLE_BAZAK_SERVICE_EDIT: #edycja wszystkich usług
+            - ROLE_BAZAK_SERVICE_VIEW
+ROLE_BAZAK_SERVICE_VIEW_TEAM: [] #podgląd usług użytkowników z tego samego działu
+ROLE_BAZAK_SERVICE_EDIT_TEAM: #edycja usług użytkowników z tego samego działu
+            - ROLE_BAZAK_SERVICE_VIEW_TEAM
+ROLE_BAZAK_CLIENT_VIEW: [] #widok ze szczegółami wszystkich klientów
+ROLE_BAZAK_CLIENT_EDIT: #edycja wszystkich klientów
+            - ROLE_BAZAK_CLIENT_VIEW
+ROLE_BAZAK_AGREEMENT_EDIT: #edycja wszystkich umów
+            - ROLE_BAZAK_AGREEMENT_VIEW #widok wszystkich umów
+            - ROLE_BAZAK_AGREEMENT_ADD #pozwala na dodawanie umów
+ROLE_BAZAK_PAPER_EDIT: #edycja wszystkich papierów
+            - ROLE_BAZAK_PAPER_VIEW #widok wszystkich papierów
+ROLE_BAZAK_MESSAGE_ADD: #dodawanie nowych wiadomości do klientów
+            - ROLE_BAZAK_MESSAGES #wyświetlanie wysłanych wiadomości do klientów
+ROLE_BAZAK_AGREEMENT_VIEW_TEAM: []
+ROLE_BAZAK_INVESTMENT_PROJECT_NOTIFICATION: []
+ROLE_BAZAK_INVOICE_VIEW_TEAM: []
+ROLE_BAZAK_REPORT_LONG_TERM_INVOICES: []
+ROLE_BAZAK_SHOW_HIDDEN: []
+ROLE_BAZAK_OLD:
+            - ROLE_BAZAK_OLD_TRANSMISSION
+            - ROLE_BAZAK_OLD_PAPERS
+            - ROLE_BAZAK_OLD_GO_TO
+
+ROLE_BAZAK_REPORT_ALL:
+            - ROLE_BAZAK_REPORT_CONTROLLING
+            - ROLE_BAZAK_REPORT_CLIENT_INCOME
+            - ROLE_BAZAK_REPORT_SIGNED_AGREEMENTS
+
+ROLE_BAZAK_EXTERNAL_URL_EDIT:
+            - ROLE_BAZAK_EXTERNAL_URL_VIEW
+
+ROLE_BAZAK_POWERUSER:
+            - ROLE_BAZAK_CLIENT_E_INVOICE_CHANGE #pozwala na zmianę e-faktury dla klienta
+            - ROLE_BAZAK_LIMITED_USER
+            - ROLE_BAZAK_SERVICE_EDIT
+            - ROLE_BAZAK_SERVICE_BIND_CHILD #dowiązywanie usługi podrzędnej
+            - ROLE_BAZAK_CLIENT_EDIT
+            - ROLE_BAZAK_TRADE_PROJECT #odpowiada za wyswietlanie pełnego odnośnika do wszystkich projektów handlowych
+            - ROLE_BAZAK_WORKFLOW #odpowiada za wyświetlanie zakłądki zlecenia w widoku klienta
+            - ROLE_BAZAK_INVOICE_GROUP_EDIT #pozwala na edycję kazdej grupy fakturowej
+            - ROLE_BAZAK_QUESTIONNAIRE #wyświetla menu z ankietami i zakładkę ankiety w kliencie
+            - ROLE_BAZAK_INVESTMENT_PROJECT #odpowiada za wyswietlanie listy projektów inwestycyjnych
+            - ROLE_BAZAK_SERVICE_REACTIVATION #pozwala zreaktywować usługę
+            - ROLE_BAZAK_SERVICE_END_UP #pozwala zakończyć każdą usługę
+            - ROLE_BAZAK_INVOICE
+            - ROLE_BAZAK_ISSUES_HISTORY #historia zgłoszeń SZZA
+            - ROLE_BAZAK_ONE_TIME_SERVICE_ADD # pozwala na dodawanie usług jednorazowych
+            - ROLE_BAZAK_AGREEMENT_EDIT
+            - ROLE_BAZAK_INDIVIDUAL_CLIENT #pozwala na dodanie nowych klientów indywidualnych (klind)
+            - ROLE_BAZAK_LIST_ALL_OBJECTS #wyświetla listy usług/klientów itd. w menu
+            - ROLE_BAZAK_PROGNOSE_POSITIONS #wyświetla prgnozowane pozycje
+            - ROLE_BAZAK_SERVICE_GRATIS #pozwala na dodanie usługi gratisowej/ustawienie usługi jako gratisowa
+            - ROLE_BAZAK_PAPER_EDIT
+            - ROLE_BAZAK_CLIENT_TRADER #pozwala na zmianę opiekuna handlowego każdemu klientowi
+            - ROLE_BAZAK_SERVICE_AGREEMENT #pozwala zmienić lub przypisać umowę do usługi
+            - ROLE_BAZAK_SERVICE_CLIENT_CHANGE #pozwala zmienić klienta dla usługi
+            - ROLE_BAZAK_SHOW_NEXT_CONTACTS_NOTIFICATIONS_BELONGS_TO_ANYONE #wyświetla w panelu powiadomień zaplanowane na dzisiaj kontakty wszystkich użytkowników
+            - ROLE_BAZAK_SERVICE_PERSONS_EDIT #pozwala na swobodną edycję kontaktów w usłudze
+            - ROLE_BAZAK_CLIENT_CUSTOM_NIP #pozwala na dodanie klienta bez walidacji numeru NIP (sprawdza jedynie unikalność)
+            - ROLE_BAZAK_CLIENT_CUSTOM_ADDRESS #pozwala na dodanie klienta bez walidacji adresu
+            - ROLE_BAZAK_INTERNAL_SERVICES #pozwala na dodawanie usług wewnętrznych
+            - ROLE_BAZAK_MESSAGE_ADD
+            - ROLE_BAZAK_POSITION_EDIT
+            - ROLE_BAZAK_SERVICE_INCOME_EDIT
+            - ROLE_BAZAK_EMPLOYEE_VIEW
+            - ROLE_BAZAK_SERVICE_TYPE_FINANCIAL_PARAMETERS_EDIT
+
+ROLE_BAZAK_LIST_ALL_OBJECTS:
+            - ROLE_BAZAK_PH2_EDIT_ALL
+            - ROLE_BAZAK_FINANCE_DETAILS_EDIT #Pozwala na edycję pola Typ Klienta oraz Numer konta FK
+            - ROLE_BAZAK_CHANGE_AGREMEENT_SELECT #Możliwośc wprowadzania zmian opiekuna na umowach
+
+ROLE_BAZAK_ADMIN:
+            - ROLE_BAZAK_POWERUSER
+            - ROLE_BAZAK_CLIENT_VIP #pozwala na zmianę statusu klienta na VIP
+            - ROLE_BAZAK_CLIENT_CSV_IMPORT #pozwala na import klientów z pliku CSV
+            - ROLE_BAZAK_OLD #wyświetla w nowym Bazaku odnośniki do starego Bazaka oraz intranetu itp.
+            - ROLE_BAZAK_FINANCE
+            - ROLE_BAZAK_AGREEMENT_TRADER_BLOCK
+            - ROLE_BAZAK_EMPLOYEE_GROUP_EDIT
+            - ROLE_BAZAK_CLIENT_PANEL
+            - ROLE_BAZAK_OPLATA_AKTYWACYJNA
+            - ROLE_BAZAK_SERVICE_EXPORT
+            - ROLE_BAZAK_INVESTMENT_PROJECT_ADVANCED_MPK
+            - ROLE_BAZAK_CLIENT_BIND
+            - ROLE_BAZAK_REPORT_ALL
+            - ROLE_BAZAK_GLOBAL_TRADER_CHANGE
+            - ROLE_BAZAK_EXTERNAL_URL_EDIT
+            - ROLE_BAZAK_SERVICE_SUSPEND
+            - ROLE_BAZAK_BOOKKEEPING
+            - ROLE_BAZAK_DEKRET_OLD
+            - ROLE_ENVELO
+            - ROLE_BAZAK_CUSTOM_ADDRESSES
+
+ROLE_BAZAK_CONTROLLING_ADMIN: [] #edycja parametrów modelu finansowego spółki 3S
+ROLE_BAZAK_TEMPLATE_AGREEMENT: [] #dodawanie szablonów umów
+ROLE_BAZAK_GENERATE_AGREEMENT: [] #generowanie umowy w docx
+ROLE_BAZAK_ANNOTATION_VAT_EDIT: [] #dodawanie adnotacji vat na kliencie
+
+ROLE_BAZAK_SUPERADMIN:
+            - ROLE_BAZAK_ADMIN
+            - ROLE_BAZAK_EMPLOYEE_DATA_VIEW
+            - ROLE_ALLOWED_TO_SWITCH #pozwala na podszycie się pod dowolnego, innego użytkownika
+            - ROLE_BAZAK_CONTROLLING_ADMIN
+            - ROLE_BAZAK_TEMPLATE_AGREEMENT
+            - ROLE_BAZAK_GENERATE_AGREEMENT
+            - ROLE_BAZAK_KAFELEK_NADRZEDNE_PODRZEDNE
+            - ROLE_BAZAK_AGREEMENT_VIEW
+            - ROLE_BAZAK_CHANGE_AGREMEENT_SELECT
+            - ROLE_BAZAK_DOCUMENTS_MODULE
